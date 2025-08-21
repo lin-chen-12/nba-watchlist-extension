@@ -1,0 +1,33 @@
+
+
+got api key, installed balldontlie api, 
+
+
+
+other apis to check out
+https://api-sports.io/documentation/nba/v2
+rate limit - 100 reqs/day
+
+https://www.api-basketball.com/pricing
+rate limit - 100 reqs/day
+
+
+https://www.thesportsdb.com/api.php 
+- rate limit of 30 reqs/min from IP address
+- 429 header once rate limit reached
+- api key for all free users - 123
+
+
+
+
+
+https://docs.balldontlie.io
+- rate limit of 5 reqs/min
+
+
+===    need more research    ===
+https://github.com/swar/nba_api
+- python wrapper for stats.nba.com
+
+
+https://pypi.org/project/nba-dataloader/
