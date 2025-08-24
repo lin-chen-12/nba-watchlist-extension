@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@balldontlie/sdk": "^1.2.2",
     "preact": "^10.27.0"
   },
   "devDependencies": {

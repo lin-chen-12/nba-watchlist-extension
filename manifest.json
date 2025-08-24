@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "NBA QuickView",
+  "version": "1.0.0",
+  "description": "One-click to view recent NBA game scores.",
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "public/vite.svg",
+      "48": "public/vite.svg",
+      "128": "public/vite.svg"
+    }
+  },
+  "icons": {
+    "16": "public/vite.svg",
+    "48": "public/vite.svg",
+    "128": "public/vite.svg"
+  },
+  "permissions": [],
+  "host_permissions": [
+    "https://*/*"
+  ]
+}

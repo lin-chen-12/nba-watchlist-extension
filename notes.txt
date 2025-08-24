@@ -1,28 +1,30 @@
 
 
-got api key, installed balldontlie api, 
-
+use cases
+- as a user, i want to see all recent game scores
+- as a user, i can star games and show only starred teams recent games
+- show upcoming (either today or the day of the next game)
 
 
 other apis to check out
 https://api-sports.io/documentation/nba/v2
-rate limit - 100 reqs/day
-
-https://www.api-basketball.com/pricing
-rate limit - 100 reqs/day
+- rate limit - 100 reqs/day
+- account created, got api key
+- tried fetching teams and limits timeframe to 2023
 
 
 https://www.thesportsdb.com/api.php 
 - rate limit of 30 reqs/min from IP address
 - 429 header once rate limit reached
 - api key for all free users - 123
-
+- get teams only returns 10 teams
 
 
 
 
 https://docs.balldontlie.io
 - rate limit of 5 reqs/min
+- got api key
 
 
 ===    need more research    ===
