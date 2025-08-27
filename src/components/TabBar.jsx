@@ -11,8 +11,8 @@ function TabBar({ activeTab, onTabChange }) {
         colorScheme="blue"
       >
         <TabList>
-          <Tab>Favorite Games</Tab>
-          <Tab>All Games</Tab>
+          <Tab>Favorite Teams</Tab>
+          {/* <Tab>All Teams</Tab> */}
           <Tab>Manage Teams</Tab>
         </TabList>
       </Tabs>

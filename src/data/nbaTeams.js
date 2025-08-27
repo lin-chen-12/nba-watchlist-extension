@@ -7,6 +7,7 @@ export const NBA_TEAMS = [
     conference: "East",
     division: "Southeast",
     colors: { primary: "#E03A3E", secondary: "#C1D32F" },
+    thesportsdb_id: "134880"
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ export const NBA_TEAMS = [
     conference: "East",
     division: "Atlantic",
     colors: { primary: "#007A33", secondary: "#BA9653" },
+    thesportsdb_id: "134860"
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ export const NBA_TEAMS = [
     conference: "East",
     division: "Atlantic",
     colors: { primary: "#000000", secondary: "#FFFFFF" },
+    thesportsdb_id: "134861"
   },
   {
     id: 4,
@@ -34,6 +37,7 @@ export const NBA_TEAMS = [
     conference: "East",
     division: "Southeast",
     colors: { primary: "#1D1160", secondary: "#00788C" },
+    thesportsdb_id: "134881"
   },
   {
     id: 5,
@@ -43,6 +47,7 @@ export const NBA_TEAMS = [
     conference: "East",
     division: "Central",
     colors: { primary: "#CE1141", secondary: "#000000" },
+    thesportsdb_id: "134870"
   },
   {
     id: 6,
@@ -52,6 +57,7 @@ export const NBA_TEAMS = [
     conference: "East",
     division: "Central",
     colors: { primary: "#860038", secondary: "#041E42" },
+    thesportsdb_id: "134871"
   },
   {
     id: 7,
@@ -61,6 +67,7 @@ export const NBA_TEAMS = [
     conference: "West",
     division: "Southwest",
     colors: { primary: "#00538C", secondary: "#002B5E" },
+    thesportsdb_id: "134875"
   },
   {
     id: 8,
@@ -70,6 +77,7 @@ export const NBA_TEAMS = [
     conference: "West",
     division: "Northwest",
     colors: { primary: "#0E2240", secondary: "#FEC524" },
+    thesportsdb_id: "134885"
   },
   {
     id: 9,
@@ -79,6 +87,7 @@ export const NBA_TEAMS = [
     conference: "East",
     division: "Central",
     colors: { primary: "#C8102E", secondary: "#1D42BA" },
+    thesportsdb_id: "134872"
   },
   {
     id: 10,
@@ -88,6 +97,7 @@ export const NBA_TEAMS = [
     conference: "West",
     division: "Pacific",
     colors: { primary: "#1D428A", secondary: "#FFC72C" },
+    thesportsdb_id: "134865"
   },
   {
     id: 11,
@@ -97,6 +107,7 @@ export const NBA_TEAMS = [
     conference: "West",
     division: "Southwest",
     colors: { primary: "#CE1141", secondary: "#000000" },
+    thesportsdb_id: "134876"
   },
   {
     id: 12,
@@ -106,6 +117,7 @@ export const NBA_TEAMS = [
     conference: "East",
     division: "Central",
     colors: { primary: "#002D62", secondary: "#FDBB30" },
+    thesportsdb_id: "134873"
   },
   {
     id: 13,
@@ -115,6 +127,7 @@ export const NBA_TEAMS = [
     conference: "West",
     division: "Pacific",
     colors: { primary: "#1D1160", secondary: "#C8102E" },
+    thesportsdb_id: "134866"
   },
   {
     id: 14,
@@ -124,6 +137,7 @@ export const NBA_TEAMS = [
     conference: "West",
     division: "Pacific",
     colors: { primary: "#552583", secondary: "#FDB927" },
+    thesportsdb_id: "134867"
   },
   {
     id: 15,
@@ -133,6 +147,7 @@ export const NBA_TEAMS = [
     conference: "West",
     division: "Southwest",
     colors: { primary: "#5D76A9", secondary: "#12173F" },
+    thesportsdb_id: "134877"
   },
   {
     id: 16,
@@ -142,6 +157,7 @@ export const NBA_TEAMS = [
     conference: "East",
     division: "Southeast",
     colors: { primary: "#98002E", secondary: "#F9A01B" },
+    thesportsdb_id: "134882"
   },
   {
     id: 17,
@@ -151,6 +167,7 @@ export const NBA_TEAMS = [
     conference: "East",
     division: "Central",
     colors: { primary: "#00471B", secondary: "#EEE1C6" },
+    thesportsdb_id: "134874"
   },
   {
     id: 18,
@@ -160,6 +177,7 @@ export const NBA_TEAMS = [
     conference: "West",
     division: "Northwest",
     colors: { primary: "#0C2340", secondary: "#236192" },
+    thesportsdb_id: "134886"
   },
   {
     id: 19,
@@ -169,6 +187,7 @@ export const NBA_TEAMS = [
     conference: "West",
     division: "Southwest",
     colors: { primary: "#0C2340", secondary: "#C8102E" },
+    thesportsdb_id: "134878"
   },
   {
     id: 20,
@@ -178,6 +197,7 @@ export const NBA_TEAMS = [
     conference: "East",
     division: "Atlantic",
     colors: { primary: "#006BB6", secondary: "#F58426" },
+    thesportsdb_id: "134862"
   },
   {
     id: 21,
@@ -187,6 +207,7 @@ export const NBA_TEAMS = [
     conference: "West",
     division: "Northwest",
     colors: { primary: "#007AC1", secondary: "#EF3B24" },
+    thesportsdb_id: "134887"
   },
   {
     id: 22,
@@ -196,6 +217,7 @@ export const NBA_TEAMS = [
     conference: "East",
     division: "Southeast",
     colors: { primary: "#0077C0", secondary: "#C4CED4" },
+    thesportsdb_id: "134883"
   },
   {
     id: 23,
@@ -205,6 +227,7 @@ export const NBA_TEAMS = [
     conference: "East",
     division: "Atlantic",
     colors: { primary: "#006BB6", secondary: "#ED174C" },
+    thesportsdb_id: "134863"
   },
   {
     id: 24,
@@ -214,6 +237,7 @@ export const NBA_TEAMS = [
     conference: "West",
     division: "Pacific",
     colors: { primary: "#1D1160", secondary: "#E56020" },
+    thesportsdb_id: "134868"
   },
   {
     id: 25,
@@ -223,6 +247,7 @@ export const NBA_TEAMS = [
     conference: "West",
     division: "Northwest",
     colors: { primary: "#E03A3E", secondary: "#000000" },
+    thesportsdb_id: "134888"
   },
   {
     id: 26,
@@ -232,6 +257,7 @@ export const NBA_TEAMS = [
     conference: "West",
     division: "Pacific",
     colors: { primary: "#5A2D81", secondary: "#63727A" },
+    thesportsdb_id: "134869"
   },
   {
     id: 27,
@@ -241,6 +267,7 @@ export const NBA_TEAMS = [
     conference: "West",
     division: "Southwest",
     colors: { primary: "#C4CED4", secondary: "#000000" },
+    thesportsdb_id: "134879"
   },
   {
     id: 28,
@@ -250,6 +277,7 @@ export const NBA_TEAMS = [
     conference: "East",
     division: "Atlantic",
     colors: { primary: "#CE1141", secondary: "#000000" },
+    thesportsdb_id: "134864"
   },
   {
     id: 29,
@@ -259,6 +287,7 @@ export const NBA_TEAMS = [
     conference: "West",
     division: "Northwest",
     colors: { primary: "#002B5C", secondary: "#00471B" },
+    thesportsdb_id: "134889"
   },
   {
     id: 30,
@@ -268,5 +297,6 @@ export const NBA_TEAMS = [
     conference: "East",
     division: "Southeast",
     colors: { primary: "#002B5C", secondary: "#E31837" },
+    thesportsdb_id: "134884"
   },
 ];

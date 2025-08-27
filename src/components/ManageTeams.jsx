@@ -38,6 +38,9 @@ function ManageTeams() {
     localStorage.setItem("favoriteTeams", JSON.stringify([...favoriteTeams]));
   }, [favoriteTeams]);
 
+
+  // create new set newFavorites to compare, if current team being toggled exists already
+  // remove it, else add it
   const toggleFavorite = (teamId) => {
     const newFavorites = new Set(favoriteTeams);
     if (newFavorites.has(teamId)) {
@@ -48,6 +51,8 @@ function ManageTeams() {
     setFavoriteTeams(newFavorites);
   };
 
+  // from NBA_TEAMS, filter based on search term by name, city, abbrevation
+  // filteredTeams is the search results
   const filteredTeams = NBA_TEAMS.filter(
     (team) =>
       team.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -67,36 +72,31 @@ function ManageTeams() {
       bg={favoriteTeams.has(team.id) ? "blue.50" : "white"}
       borderColor={favoriteTeams.has(team.id) ? "blue.200" : "gray.200"}
       borderWidth="1px"
+      width="100%"
     >
-      <CardBody>
-        <VStack spacing={3}>
-          <HStack justify="space-between" width="100%">
+      <CardBody py={3}>
+        <HStack justify="space-between" align="center">
+          <HStack spacing={3}>
             <Badge colorScheme={team.conference === "East" ? "blue" : "red"}>
               {team.conference}
             </Badge>
-            <Button
-              size="sm"
-              variant={favoriteTeams.has(team.id) ? "solid" : "outline"}
-              colorScheme="yellow"
-              leftIcon={<StarIcon />}
-              onClick={() => toggleFavorite(team.id)}
-            >
-              {favoriteTeams.has(team.id) ? "Starred" : "Star"}
-            </Button>
-          </HStack>
-
-          <VStack spacing={1} textAlign="center">
-            <Text fontWeight="bold" fontSize="lg">
+            <Text fontWeight="bold" fontSize="md">
               {team.abbreviation}
             </Text>
             <Text fontSize="sm" color="gray.600">
               {team.name}
             </Text>
-            <Text fontSize="xs" color="gray.500">
-              {team.division}
-            </Text>
-          </VStack>
-        </VStack>
+          </HStack>
+          
+          <Button
+            size="xs"
+            variant={favoriteTeams.has(team.id) ? "solid" : "outline"}
+            colorScheme="yellow"
+            onClick={() => toggleFavorite(team.id)}
+          >
+            {favoriteTeams.has(team.id) ? "★" : "☆"}
+          </Button>
+        </HStack>
       </CardBody>
     </Card>
   );
@@ -108,7 +108,7 @@ function ManageTeams() {
           Manage Your Favorite Teams
         </Text>
         <Text fontSize="sm" color="gray.600" textAlign="center">
-          Star your favorite teams to see their games in the Favorites tab
+          Favorite/unfavorite teams to see their games in the Favorites tab
         </Text>
 
         <InputGroup maxW="300px">
@@ -123,7 +123,7 @@ function ManageTeams() {
         </InputGroup>
 
         <Text fontSize="sm" color="blue.600">
-          {favoriteTeams.size} team{favoriteTeams.size !== 1 ? "s" : ""} starred
+          {favoriteTeams.size} team{favoriteTeams.size !== 1 ? "s" : ""} favorited
         </Text>
       </VStack>
 
@@ -135,19 +135,15 @@ function ManageTeams() {
 
         <TabPanels>
           <TabPanel>
-            <SimpleGrid columns={{ base: 2, md: 3, lg: 4 }} spacing={4}>
-              {eastTeams.map((team) => (
-                <TeamCard key={team.id} team={team} />
-              ))}
-            </SimpleGrid>
+            <VStack spacing={2} align="stretch" maxH="400px" overflowY="auto">
+              {eastTeams.map(team => <TeamCard key={team.id} team={team} />)}
+            </VStack>
           </TabPanel>
-
+          
           <TabPanel>
-            <SimpleGrid columns={{ base: 2, md: 3, lg: 4 }} spacing={4}>
-              {westTeams.map((team) => (
-                <TeamCard key={team.id} team={team} />
-              ))}
-            </SimpleGrid>
+            <VStack spacing={2} align="stretch" maxH="400px" overflowY="auto">
+              {westTeams.map(team => <TeamCard key={team.id} team={team} />)}
+            </VStack>
           </TabPanel>
         </TabPanels>
       </Tabs>
