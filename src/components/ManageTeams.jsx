@@ -45,8 +45,13 @@ function ManageTeams() {
     const newFavorites = new Set(favoriteTeams);
     if (newFavorites.has(teamId)) {
       newFavorites.delete(teamId);
-    } else {
-      newFavorites.add(teamId);
+    } 
+    else {
+
+      if (newFavorites.size < 3) {
+        newFavorites.add(teamId);
+      }
+
     }
     setFavoriteTeams(newFavorites);
   };
@@ -63,43 +68,51 @@ function ManageTeams() {
   const eastTeams = filteredTeams.filter((team) => team.conference === "East");
   const westTeams = filteredTeams.filter((team) => team.conference === "West");
 
-  const TeamCard = ({ team }) => (
-    <Card
-      key={team.id}
-      cursor="pointer"
-      transition="all 0.2s"
-      _hover={{ transform: "translateY(-2px)", shadow: "md" }}
-      bg={favoriteTeams.has(team.id) ? "blue.50" : "white"}
-      borderColor={favoriteTeams.has(team.id) ? "blue.200" : "gray.200"}
-      borderWidth="1px"
-      width="100%"
-    >
-      <CardBody py={3}>
-        <HStack justify="space-between" align="center">
-          <HStack spacing={3}>
-            <Badge colorScheme={team.conference === "East" ? "blue" : "red"}>
-              {team.conference}
-            </Badge>
-            <Text fontWeight="bold" fontSize="md">
-              {team.abbreviation}
-            </Text>
-            <Text fontSize="sm" color="gray.600">
-              {team.name}
-            </Text>
+  const TeamCard = ({ team }) => {
+    const isStarred = favoriteTeams.has(team.id);
+    const canStar = isStarred || favoriteTeams.size < 3;
+
+    return (
+      <Card
+        key={team.id}
+        cursor="pointer"
+        transition="all 0.2s"
+        _hover={{ transform: "translateY(-2px)", shadow: "md" }}
+        bg={isStarred ? "blue.50" : "white"}
+        borderColor={isStarred ? "blue.200" : "gray.200"}
+        borderWidth="1px"
+        width="100%"
+      >
+        <CardBody py={3}>
+          <HStack justify="space-between" align="center">
+            <HStack spacing={3}>
+              <Badge colorScheme={team.conference === "East" ? "blue" : "red"}>
+                {team.conference}
+              </Badge>
+              <Text fontWeight="bold" fontSize="md">
+                {team.abbreviation}
+              </Text>
+              <Text fontSize="sm" color="gray.600">
+                {team.name}
+              </Text>
+            </HStack>
+
+            <Button
+              size="xs"
+              variant={isStarred ? "solid" : "outline"}
+              colorScheme="yellow"
+              onClick={() => toggleFavorite(team.id)}
+              disabled={!canStar}
+              opacity={canStar ? 1 : 0.5}
+              cursor={canStar ? "pointer" : "not-allowed"}
+            >
+              {isStarred ? "★" : "☆"}
+            </Button>
           </HStack>
-          
-          <Button
-            size="xs"
-            variant={favoriteTeams.has(team.id) ? "solid" : "outline"}
-            colorScheme="yellow"
-            onClick={() => toggleFavorite(team.id)}
-          >
-            {favoriteTeams.has(team.id) ? "★" : "☆"}
-          </Button>
-        </HStack>
-      </CardBody>
-    </Card>
-  );
+        </CardBody>
+      </Card>
+    );
+  };
 
   return (
     <VStack spacing={6} align="stretch">
@@ -122,8 +135,20 @@ function ManageTeams() {
           />
         </InputGroup>
 
+        {/* <Text fontSize="sm" color="blue.600">
+          {favoriteTeams.size} team{favoriteTeams.size !== 1 ? "s" : ""}{" "}
+          favorited
+        </Text> */}
+
         <Text fontSize="sm" color="blue.600">
-          {favoriteTeams.size} team{favoriteTeams.size !== 1 ? "s" : ""} favorited
+          {favoriteTeams.size}/3 team{favoriteTeams.size !== 1 ? "s" : ""}{" "}
+          favorited
+          {favoriteTeams.size >= 3 && (
+            <Text as="span" color="red.600">
+              {" "}
+              (Maximum reached)
+            </Text>
+          )}
         </Text>
       </VStack>
 
@@ -136,13 +161,17 @@ function ManageTeams() {
         <TabPanels>
           <TabPanel>
             <VStack spacing={2} align="stretch" maxH="400px" overflowY="auto">
-              {eastTeams.map(team => <TeamCard key={team.id} team={team} />)}
+              {eastTeams.map((team) => (
+                <TeamCard key={team.id} team={team} />
+              ))}
             </VStack>
           </TabPanel>
-          
+
           <TabPanel>
             <VStack spacing={2} align="stretch" maxH="400px" overflowY="auto">
-              {westTeams.map(team => <TeamCard key={team.id} team={team} />)}
+              {westTeams.map((team) => (
+                <TeamCard key={team.id} team={team} />
+              ))}
             </VStack>
           </TabPanel>
         </TabPanels>
