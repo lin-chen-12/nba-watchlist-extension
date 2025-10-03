@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite'
-import preact from '@preact/preset-vite'
+import { defineConfig } from "vite";
+import preact from "@preact/preset-vite";
 import { resolve } from "path";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 
@@ -7,7 +7,6 @@ import { viteStaticCopy } from "vite-plugin-static-copy";
 export default defineConfig({
   plugins: [
     preact(),
-
     viteStaticCopy({
       targets: [
         {
@@ -26,9 +25,20 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, "index.html"),
+        popup: resolve(__dirname, "index.html"),
+      },
+      output: {
+        format: "iife",
+        entryFileNames: "[name].js",
+        chunkFileNames: "[name].js",
+        assetFileNames: "[name].[ext]",
+        inlineDynamicImports: true,
       },
     },
+    target: "es2015",
+    minify: false,
+    outDir: "dist",
+    emptyOutDir: true,
   },
   resolve: {
     alias: {
@@ -40,5 +50,3 @@ export default defineConfig({
     },
   },
 });
-
-
